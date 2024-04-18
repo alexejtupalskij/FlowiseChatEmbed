@@ -25,8 +25,11 @@ export const sendRequest = async <ResponseData>(
         typeof params !== 'string' && isDefined(params.body)
           ? {
               'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
             }
-          : undefined,
+          : {
+              'Access-Control-Allow-Origin': '*',
+            },
       body: typeof params !== 'string' && isDefined(params.body) ? JSON.stringify(params.body) : undefined,
     });
     let data: any;
