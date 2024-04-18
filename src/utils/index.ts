@@ -26,9 +26,11 @@ export const sendRequest = async <ResponseData>(
           ? {
               'Content-Type': 'application/json',
               'Access-Control-Allow-Origin': '*',
+              'ngrok-skip-browser-warning': "true",
             }
           : {
               'Access-Control-Allow-Origin': '*',
+              'ngrok-skip-browser-warning': "true",
             },
       body: typeof params !== 'string' && isDefined(params.body) ? JSON.stringify(params.body) : undefined,
     });
